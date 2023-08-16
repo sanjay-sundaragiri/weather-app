@@ -1,3 +1,4 @@
+import { API_KEY, API_BASE } from './keys.js';
 
 const search= document.getElementsByClassName('city-search')[0]
 const statusElement= document.querySelector('[data-status]')
@@ -6,11 +7,14 @@ const windElement= document.querySelector('[data-wind]')
 const temperatureElement= document.querySelector('[data-temperature]')
 const humidityElement= document.querySelector('[data-humidity]')
 
+
+// const KEY=process.env.API_KEY
+// const BASE= process.env.API_BASE
 const api ={
-    key: "a773c60416c78424cb1d9fef3aa809cd",
-    base: "https://api.openweathermap.org/data/2.5/",
+    key: API_KEY,
+    base: API_BASE,
 } ;
-// https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=a773c60416c78424cb1d9fef3aa809cd
+
 
 function buttonClicked(){
     //API
@@ -25,7 +29,7 @@ function buttonClicked(){
         console.log(err)
     })
 }
-
+// buttonClicked();
 function setWeather(data){
     // console.log("Hello")
     
@@ -38,6 +42,7 @@ function setWeather(data){
     humidityElement.textContent= data.main.humidity
  }
   
-
+ const searchButton = document.querySelector('.btn');
+ searchButton.addEventListener('click', buttonClicked);
 
 
