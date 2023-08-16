@@ -1,4 +1,4 @@
-import { API_KEY, API_BASE } from './keys.js';
+
 
 const search= document.getElementsByClassName('city-search')[0]
 const statusElement= document.querySelector('[data-status]')
@@ -8,8 +8,8 @@ const temperatureElement= document.querySelector('[data-temperature]')
 const humidityElement= document.querySelector('[data-humidity]')
 
 
-// const KEY=process.env.API_KEY
-// const BASE= process.env.API_BASE
+const API_KEY = 'a773c60416c78424cb1d9fef3aa809cd';
+const API_BASE = 'https://api.openweathermap.org/data/2.5/';
 const api ={
     key: API_KEY,
     base: API_BASE,
@@ -29,7 +29,7 @@ function buttonClicked(){
         console.log(err)
     })
 }
-// buttonClicked();
+
 function setWeather(data){
     // console.log("Hello")
     
